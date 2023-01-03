@@ -612,7 +612,7 @@ public:
                 item->setResponse(j - item->getArrival());
                 if (item->getResponse() < 0)
                     item->setResponse(0);
-                delete (&stat);
+                //delete (&stat);
                 stat = "Running";
                 table *node = (table *)malloc(sizeof(table));
                 node->setId(item->getId());
@@ -688,7 +688,7 @@ public:
                 }
 
                 int rem = item->getRemaining();
-                delete (&stat);
+                //delete (&stat);
                 stat = "Running";
                 table *node = (table *)malloc(sizeof(table));
                 node->setId(item->getId());
@@ -852,7 +852,7 @@ public:
         print << "Millisecond Number	    Process Id"
               << "\t\t\t"
               << "Status\n";
-        for (int i = 0; i <= clock; i++)
+        for (int i = 0; i <= clock && i < st; i++)
         {
             if (Table[i]->getSize() == 0)
                 continue;
